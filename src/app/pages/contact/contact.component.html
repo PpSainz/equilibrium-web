@@ -1,1 +1,77 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <div class="contact-card">
+    <h1>Contact Us</h1>
+    <p class="subtitle">We're here to help. Send us a message and we'll get back to you as soon as possible.</p>
+    
+    <form (ngSubmit)="sendEmail()" #contactForm="ngForm" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          [(ngModel)]="formData.name" 
+          required 
+          #name="ngModel" 
+          class="form-control"
+          placeholder="Your name">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="formData.email" 
+          required 
+          email
+          #email="ngModel" 
+          class="form-control"
+          placeholder="your@email.com">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject" 
+          [(ngModel)]="formData.subject" 
+          required 
+          #subject="ngModel" 
+          class="form-control"
+          placeholder="Message subject">
+        <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="error-message">
+          Subject is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          [(ngModel)]="formData.message" 
+          required 
+          #message="ngModel" 
+          rows="5" 
+          class="form-control"
+          placeholder="Type your message here..."></textarea>
+        <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error-message">
+          Message is required
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" [disabled]="!contactForm.form.valid">
+        Send Message
+      </button>
+    </form>
+  </div>
+</div>
