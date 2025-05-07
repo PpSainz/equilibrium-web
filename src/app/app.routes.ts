@@ -11,7 +11,7 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
     title: 'Equilibrium - Mental Health Support for Students'
   },
