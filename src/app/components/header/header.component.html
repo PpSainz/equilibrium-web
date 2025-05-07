@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm mx-0 mb-1 rounded-bottom" style="background-color: #0B6FF9;">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" [routerLink]="['/home']" style="height: 50px;">
+      <div class="d-block" style="height: 100%;">
+        <img 
+          src="assets/logo horizontal.svg" 
+          alt="Equilibrium Logo" 
+          class="h-100"
+          style="width: auto;"
+        >
+      </div>
+    </a>
+    
+    <!-- Mobile menu button -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="!isMenuCollapsed"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isMenuCollapsed">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" (click)="closeMenu()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active" (click)="closeMenu()">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/team']" routerLinkActive="active" (click)="closeMenu()">Our Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active" (click)="closeMenu()">Contact</a>
+        </li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+          <a 
+            [routerLink]="['/contact']" 
+            class="btn btn-light rounded-pill px-4"
+            (click)="closeMenu()"
+          >
+            Get Started
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

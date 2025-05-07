@@ -1,0 +1,75 @@
+// Variables de color
+$primary-color: #0B6FF9;
+$secondary-color: #D2F3FF;
+$light-color: #ffffff;
+$dark-color: #333333;
+
+// Estilos generales del header
+:host {
+  display: block;
+  width: 100%;
+}
+
+// Estilos de la barra de navegación
+.navbar {
+  padding: 0.57rem 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  
+  .navbar-brand {
+    img {
+      transition: all 0.3s ease;
+    }
+  }
+  
+  .nav-link {
+    color: $light-color;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    
+    &:hover, 
+    &.active {
+      color: $light-color;
+      background-color: rgba($light-color, 0.2);
+      opacity: 1;
+    }
+  }
+  
+  .btn-primary {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: $light-color !important;
+    color: $primary-color !important;
+    border: none;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      opacity: 0.95;
+    }
+  }
+}
+
+// Estilos responsivos
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem 0;
+    
+    .nav-item {
+      margin: 0.25rem 0;
+      
+      .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}

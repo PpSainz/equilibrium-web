@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Variables de colores */
+:root {
+  --color-primary: #0B6FF9;
+  --color-secondary: #D2F3FF;
+  --color-accent: #262626;
+  --color-neutral: #D2F3FF; /* Cambiado a #D2F3FF */
+}
+
+/* Estilos globales */
+body {
+  background-color: var(--color-neutral);
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-accent);
+  line-height: 1.6;
+}
+
+/* Asegura que el contenido principal ocupe al menos toda la altura de la ventana */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Estilos de tipografía */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-accent);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+/* Estilos de enlaces */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: color-mix(in srgb, var(--color-primary), #000 10%);
+  }
+}
+
+/* Clases de utilidad para colores */
+.bg-primary {
+  background-color: var(--color-primary);
+  color: var(--color-neutral);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Estilos para botones */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  &-primary {
+    background-color: var(--color-primary);
+    color: var(--color-neutral);
+    border-color: var(--color-primary);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-primary), #000 10%);
+      border-color: color-mix(in srgb, var(--color-primary), #000 10%);
+    }
+  }
+
+}
