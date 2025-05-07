@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Aplicar Fredoka a todo el proyecto */
+* {
+  font-family: 'Fredoka', sans-serif;
+}
+
 /* Variables de colores */
 :root {
   --color-primary: #0B6FF9;
